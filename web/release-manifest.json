@@ -5,9 +5,9 @@
   "content_version": 2,
   "godot": "4.7.2",
   "status": "candidate",
-  "source_commit": "dd7d36964e791552d70c39d669d79479cb25df03",
+  "source_commit": "0d0755cf98f2275fb9274eb947cb3ef40b020123",
   "dirty": false,
-  "built_at": "2026-10-02T12:46:35.458309+00:00",
+  "built_at": "2026-10-02T13:19:22.169109+00:00",
   "sha256": {
     "game/content.json": "2b835600e006ffc8ca30f75c7caffad1653c398f1b58932ecd7f7ab9a0e714b8",
     "game/chapters.json": "0e91189a16e075e8e297f0be90c16d6f230645ee69faa4872f39056cb70e050f",

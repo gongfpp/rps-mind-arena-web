@@ -2,6 +2,7 @@
 (() => {
   const originalFetch = window.fetch.bind(window);
   const sizes = document.currentScript?.dataset || {};
+  const revision = sizes.revision ? '?v=' + encodeURIComponent(sizes.revision) : '';
   const assets = new Map([
     [new URL('index.wasm', document.baseURI).href,
       {type: 'application/wasm', total: Number(sizes.wasmSize) || 0, loaded: 0}],
@@ -38,7 +39,7 @@
     watch();
     progress();
     try {
-      const response = await originalFetch(url + '.gz', {...init, signal: controller.signal});
+      const response = await originalFetch(url + '.gz' + revision, {...init, signal: controller.signal});
       if (!response.ok) return response;
       watch();
       if (!state.total) state.total = Number(response.headers.get('Content-Length')) || 0;
