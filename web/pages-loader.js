@@ -12,7 +12,10 @@
     if (!assets.has(url)) return originalFetch(input, init);
     const response = await originalFetch(url + '.gz', init);
     if (!response.ok) return response;
-    const decoded = response.body.pipeThrough(new DecompressionStream('gzip'));
+    // Godot's progress stream does not forward rejected network reads. Finish
+    // this bounded download here, so errors reach its fetch retry/failure path.
+    const decoded = await new Response(
+      response.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
     return new Response(decoded, {status: response.status,
       headers: {'Content-Type': assets.get(url)}});
   };
