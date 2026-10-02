@@ -1,0 +1,32 @@
+{
+  "version": "0.7.0-alpha.2",
+  "save_schema": 2,
+  "rules_version": 3,
+  "content_version": 2,
+  "godot": "4.7.2",
+  "status": "candidate",
+  "source_commit": "c197effd9bf9d7f1bc28ec064e693125d52e7383",
+  "dirty": false,
+  "built_at": "2026-10-02T10:59:41.417816+00:00",
+  "sha256": {
+    "game/content.json": "2b835600e006ffc8ca30f75c7caffad1653c398f1b58932ecd7f7ab9a0e714b8",
+    "game/chapters.json": "0e91189a16e075e8e297f0be90c16d6f230645ee69faa4872f39056cb70e050f",
+    "game/learning.json": "34295229cf2573a6632b98a9d57be4eb092164e2a91836431632a75e866cbcac",
+    "localization/text.csv": "2f94b284fc673c2c57f2a69c7b0511adb99802ab38a2300e2a265815a6b71648",
+    "themes/midnight.json": "c8e0ab59f621a50b49166ee405cac9b585b7f1edefb26a29ff26fd35895d1ad7",
+    "themes/ember.json": "201cd23bf49047522fd2debe65a629b6c53ed8ab3b256842b8f6404d1556e68f",
+    "platform/steam.json": "b798c7766b0ad56148c080ed657f3fc928b7cda39f48c12b06d4828d6a311520",
+    "platform/godotsteam.lock.json": "f4e5f268e5bcb8c514f8be8384d53e8e76060724e6d38056ad0fe4321ef43699",
+    "game/achievements.json": "dab23a473c0f8f4eabbc0dacaef3666ce785320ea114304bfcf0e6e5fc3cd34f"
+  },
+  "theme_versions": {
+    "midnight": 2
+  },
+  "acceptance": {
+    "macos_notarized": false,
+    "external_blind_test": false,
+    "windows_runtime": false,
+    "steam_online": false,
+    "workshop_online": false
+  }
+}

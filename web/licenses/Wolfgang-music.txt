@@ -1,0 +1,8 @@
+Wolfgang_ — 8-Bit Battle Loop and 8-Bit Cave Loop
+License: CC0 1.0 Universal, as declared on the author's asset pages.
+https://creativecommons.org/publicdomain/zero/1.0/
+Sources (checked 2026-09-29):
+https://opengameart.org/content/8-bit-battle-loop
+https://opengameart.org/content/8-bit-cave-loop
+Runtime audio is unchanged, filenames renamed only. Looping and gain are set in the player.
+Original Famitracker / NSF sources are in art-source/audio/wolfgang, excluded from game exports.
