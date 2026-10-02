@@ -1,6 +1,6 @@
 # 拳局 · RPS Mind Arena · Web
 
-[立即游玩](https://gongfpp.github.io/rps-mind-arena-web/) · 0.7.0-alpha.2 · 简体中文
+[立即游玩](https://gongfpp.github.io/rps-mind-arena-web/) · 0.7.0-alpha.3 · 简体中文
 
 月下三路，一拳定局。像素风卡牌构筑冒险：侦察对手习惯，部署石头、剪刀、布，在一章十二站中构筑牌组。
 

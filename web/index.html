@@ -29,19 +29,27 @@ article{position:relative;width:min(530px,100%);border:1px solid #63778f;backgro
 <p id="failure" role="alert" hidden></p>
 <div class="keys">选牌 1–5 · 部署 A / S / D · 揭牌 Space · 暂停 Esc</div>
 <small>旅程自动保存在当前浏览器的站点数据中。清除数据、隐私模式或浏览器回收存储可能导致丢失。推荐桌面浏览器、键盘和鼠标。</small>
-<div id="version">0.7.0-alpha.2</div>
+<div id="version">0.7.0-alpha.3</div>
 </article></div>
-<script src="pages-loader.js"></script>
+<script src="pages-loader.js?v=e3342bf9c829" data-wasm-size="10054758" data-pck-size="13374295"></script>
 <script src="index.js"></script>
 <script>
 const COPY={"web.title": "拳局", "web.canvas": "拳局游戏画面", "web.subtitle": "观察对手、分配专注、部署三路。踏入黑雾之城，让每一次出拳都成为选择。", "web.no_script": "请开启浏览器的 JavaScript 后重新加载。", "web.loading": "灯火正在亮起…", "web.ready": "第一章 · 黑雾之城", "web.start": "进入游戏", "web.retry": "重新加载", "web.failed": "游戏未能载入。请检查网络后重试，或使用较新的桌面浏览器。", "web.http": "请通过随包说明中的本地服务打开游戏，不能直接双击此文件。", "web.unsupported": "当前浏览器缺少运行游戏所需的图形功能。请尝试开启硬件加速，或换用较新的桌面浏览器。", "web.save": "旅程自动保存在当前浏览器的站点数据中。清除数据、隐私模式或浏览器回收存储可能导致丢失。推荐桌面浏览器、键盘和鼠标。", "web.description": "月下三路，一拳定局。观察对手、分配专注、部署三路，踏入黑雾之城。", "web.eyebrow": "月下三路 · 一拳定局", "web.controls": "选牌 1–5 · 部署 A / S / D · 揭牌 Space · 暂停 Esc", "web.preparing": "下载完成，正在唤醒黑雾之城…", "web.context_lost": "浏览器的图形连接已中断。请重新加载，从上一次自动保存的位置继续。"};
 const config={"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":17048512,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 let engine;
 const gate=document.getElementById('gate'),button=document.getElementById('start'),progress=document.getElementById('progress'),message=document.getElementById('message'),failure=document.getElementById('failure');
-let starting=false,interrupted=false;
+let starting=false,interrupted=false,downloadProgressActive=false;
 const canvas=document.getElementById('canvas');
-function fail(error,copy='web.failed'){if(error)console.error(error);gate.hidden=false;failure.textContent=COPY[copy];failure.hidden=false;message.textContent='';progress.hidden=true;button.hidden=false;button.textContent=COPY['web.retry'];button.disabled=false;starting=false;button.onclick=()=>location.reload();button.focus();}
+function fail(error,copy='web.failed'){interrupted=true;if(error)console.error(error);gate.hidden=false;failure.textContent=COPY[copy];failure.hidden=false;message.textContent='';progress.hidden=true;button.hidden=false;button.textContent=COPY['web.retry'];button.disabled=false;starting=false;button.onclick=()=>location.reload();button.focus();}
 canvas.addEventListener('webglcontextlost',()=>{interrupted=true;fail(null,'web.context_lost');});
+window.addEventListener('rps-download-progress',event=>{
+ if(!starting||interrupted||gate.hidden||event.detail.total<=0)return;
+ downloadProgressActive=true;
+ progress.value=event.detail.current;progress.max=event.detail.total;
+ const percent=Math.min(100,Math.floor(event.detail.current/event.detail.total*100));
+ message.textContent=percent<100?COPY['web.loading']+' '+percent+'%':COPY['web.preparing'];
+});
+window.addEventListener('rps-download-error',event=>{if(starting&&!gate.hidden)fail(event.detail);});
 button.onclick=async()=>{
  if(starting)return; starting=true;button.disabled=true;progress.hidden=false;message.textContent=COPY['web.loading'];
  try{
@@ -50,10 +58,10 @@ button.onclick=async()=>{
   const missing=Engine.getMissingFeatures({threads:false});
   if(missing.length){failure.textContent=COPY['web.unsupported'];failure.hidden=false;button.hidden=true;progress.hidden=true;message.textContent='';return;}
   engine=new Engine(config);
-  await engine.startGame({onProgress:(current,total)=>{if(total>0){progress.value=current;progress.max=total;const percent=Math.min(100,Math.round(current/total*100));message.textContent=percent<100?COPY['web.loading']+' '+percent+'%':COPY['web.preparing'];}}});
+  await engine.startGame({onProgress:(current,total)=>{if(!downloadProgressActive&&total>0){progress.value=current;progress.max=total;const percent=Math.min(100,Math.round(current/total*100));message.textContent=percent<100?COPY['web.loading']+' '+percent+'%':COPY['web.preparing'];}}});
   if(interrupted)return;
   gate.hidden=true;canvas.focus();
-}catch(error){fail(error);}
+}catch(error){if(!interrupted)fail(error);}
 };
 message.textContent=COPY['web.ready'];
 button.disabled=false;

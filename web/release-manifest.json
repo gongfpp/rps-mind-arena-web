@@ -1,13 +1,13 @@
 {
-  "version": "0.7.0-alpha.2",
+  "version": "0.7.0-alpha.3",
   "save_schema": 2,
   "rules_version": 3,
   "content_version": 2,
   "godot": "4.7.2",
   "status": "candidate",
-  "source_commit": "c197effd9bf9d7f1bc28ec064e693125d52e7383",
+  "source_commit": "e3342bf9c829710e2c1500ea1738aaeab0b7fd3c",
   "dirty": false,
-  "built_at": "2026-10-02T10:59:41.417816+00:00",
+  "built_at": "2026-10-02T12:15:46.321851+00:00",
   "sha256": {
     "game/content.json": "2b835600e006ffc8ca30f75c7caffad1653c398f1b58932ecd7f7ab9a0e714b8",
     "game/chapters.json": "0e91189a16e075e8e297f0be90c16d6f230645ee69faa4872f39056cb70e050f",
