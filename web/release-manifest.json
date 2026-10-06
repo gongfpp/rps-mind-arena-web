@@ -5,10 +5,11 @@
   "content_version": 2,
   "godot": "4.7.2",
   "status": "candidate",
-  "source_commit": "0d0755cf98f2275fb9274eb947cb3ef40b020123",
+  "source_commit": "4441da0aac29c114dc6d31dcb29cd786314ce73f",
   "dirty": false,
-  "built_at": "2026-10-02T13:19:22.169109+00:00",
+  "built_at": "2026-10-04T03:40:05.649603+00:00",
   "sha256": {
+    "release.json": "9d37500437c16a0e582b7215df257721aca68a71b669a2e11ccc1e3ceb67044a",
     "game/content.json": "2b835600e006ffc8ca30f75c7caffad1653c398f1b58932ecd7f7ab9a0e714b8",
     "game/chapters.json": "0e91189a16e075e8e297f0be90c16d6f230645ee69faa4872f39056cb70e050f",
     "game/learning.json": "34295229cf2573a6632b98a9d57be4eb092164e2a91836431632a75e866cbcac",
