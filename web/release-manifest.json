@@ -1,26 +1,26 @@
 {
-  "version": "0.7.0-alpha.4",
+  "version": "0.8.0-alpha.1",
   "save_schema": 2,
-  "rules_version": 3,
-  "content_version": 2,
+  "rules_version": 4,
+  "content_version": 3,
   "godot": "4.7.2",
   "status": "candidate",
-  "source_commit": "0d0755cf98f2275fb9274eb947cb3ef40b020123",
+  "source_commit": "3a86cba94c21127f40dd46595a202a91bedadcd1",
   "dirty": false,
-  "built_at": "2026-10-02T13:19:22.169109+00:00",
+  "built_at": "2026-10-22T07:51:12.168180+00:00",
   "sha256": {
-    "game/content.json": "2b835600e006ffc8ca30f75c7caffad1653c398f1b58932ecd7f7ab9a0e714b8",
-    "game/chapters.json": "0e91189a16e075e8e297f0be90c16d6f230645ee69faa4872f39056cb70e050f",
+    "game/content.json": "a61cedbf625f1c53e7f160084ae4a0e8cf272c632347485ce5e4f3700ba7611b",
+    "game/chapters.json": "03b1b1d6e666aa1e0a658f956cf88127e8310bf95cf11bf4ca62019f5541f355",
     "game/learning.json": "34295229cf2573a6632b98a9d57be4eb092164e2a91836431632a75e866cbcac",
-    "localization/text.csv": "2f94b284fc673c2c57f2a69c7b0511adb99802ab38a2300e2a265815a6b71648",
-    "themes/midnight.json": "15ed7be3eb90332ea179f6347509c80093166d0c928992e4ddfdb4aae047ba34",
+    "localization/text.csv": "a758f3abb94f01c1ccc272d0a6e4a5ecb5535adb842e3cf00ddc9caab1606e05",
+    "themes/midnight.json": "41d83452971336ef90ecf5c9e217b849f8d5607462c4ec14f892e1f798fd4024",
     "themes/ember.json": "201cd23bf49047522fd2debe65a629b6c53ed8ab3b256842b8f6404d1556e68f",
     "platform/steam.json": "b798c7766b0ad56148c080ed657f3fc928b7cda39f48c12b06d4828d6a311520",
     "platform/godotsteam.lock.json": "f4e5f268e5bcb8c514f8be8384d53e8e76060724e6d38056ad0fe4321ef43699",
     "game/achievements.json": "dab23a473c0f8f4eabbc0dacaef3666ce785320ea114304bfcf0e6e5fc3cd34f"
   },
   "theme_versions": {
-    "midnight": 2
+    "midnight": 3
   },
   "acceptance": {
     "macos_notarized": false,
