@@ -29,5 +29,11 @@
     "windows_runtime": false,
     "steam_online": false,
     "workshop_online": false
+  },
+  "visitor_footer": {
+    "site": "rps-mind-arena",
+    "client_sha256": "fa91d3d6a17d006a660c5d32ece8828ea74717ca03d6c291b675518e7fb44021",
+    "base_runtime_unchanged": true,
+    "source_commit": "24e359f4f838c299cf352ec7cd043a48567b3ea6"
   }
 }
