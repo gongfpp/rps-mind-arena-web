@@ -35,5 +35,13 @@
     "client_sha256": "a91e0568629bfa4b0818398965f3dab4e7239dc7cedae61882c1c4435934cf57",
     "base_runtime_unchanged": true,
     "source_commit": "d607d6297b63653337b5b0021d101edcb774a7d2"
+  },
+  "web_page_events": {
+    "site": "rps-mind-arena",
+    "client_sha256": "fc1953ec845b25ba5017fd3889c2426b2e3b4c6f87fbe9cb40eb8e69819009af",
+    "source_commit": "c93838c8dab138fedfca3e2f5dab9ca31362ed72",
+    "base_runtime_unchanged": true,
+    "channel": "github-pages",
+    "scope": "outer-page-only"
   }
 }
